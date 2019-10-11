@@ -13,11 +13,6 @@ import { connect } from 'react-redux'
 import './App.css'
 
 
-// const Clarifai = require('clarifai')
-// const appClarifai = new Clarifai.App({
-//     apiKey: 'eacdc29814054bf086ee4ba63bb8f983'
-//    });
-
 const mapDispatchToProps = (dispatch) => {
     return {
         writeImageUrl: (event) => dispatch(writeImageUrlACT(event.target.value)),

@@ -29,6 +29,7 @@ export const writePasswordACT = (text) => ({
 export const submitRegisterACT = (name, email, password) => (dispatch) => {
     dispatch({ type: REGISTER_PENDING })
     fetch('https://fathomless-oasis-93003.herokuapp.com/register', {
+        mode: 'no-cors',
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
