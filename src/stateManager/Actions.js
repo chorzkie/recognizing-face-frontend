@@ -12,16 +12,14 @@ import {
     UPDATE_SUBMISSION_SUCCESS,
     UPDATE_SUBMISSION_FAILED,
 
-    // GET_SUBMISSION_PENDING,
-    // GET_SUBMISSION_SUCCESS,
-    // GET_SUBMISSION_FAILED,
-
     FACE_MARKINGS,
     NO_FACE_MARKINGS,
     CLEAR_MARKINGS
 } from './Constants'
 
 import { stateStore } from '../index';
+
+
 
 export const writeImageUrlACT = (text) => ({
     type: CHANGE_URL_INPUT,

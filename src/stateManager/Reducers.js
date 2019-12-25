@@ -1,3 +1,5 @@
+import storage from 'redux-persist/lib/storage'
+
 import {
     CHANGE_ROUTE,
 
@@ -18,6 +20,8 @@ import {
 } from './Constants'
 
 
+
+
 const initialMainState = {
     route: 'signin',
     isSignedIn: false,
@@ -36,31 +40,23 @@ const initialMainState = {
     },
 }
 
+
+
 export const mainAppRED = (state = initialMainState, action = {}) => {
     switch (action.type) {
 
         case CHANGE_ROUTE:
             if (action.payload === 'signin') {
                 //clear out states when signing out
-                Object.assign({}, state, {
-                    route: action.payload,
-                    isSignedIn: false,
-                    imageUrl: '',
-                    predictionStatus: '',
-                    box: [],
-                    user: Object.assign({}, state.user, {
-                        id: '',
-                        name: '',
-                        email: '',
-                        entries: 0,
-                        joined: '',
-                    }),
-                })
+                storage.removeItem('persist:root')
+                return Object.assign({}, state, initialMainState)
             }
-            else if (action.payload === 'home') {
-                Object.assign({}, state, { route: action.payload, isSignedIn: true })
+            if (action.payload === 'home') {
+                return Object.assign({}, state, { route: action.payload, isSignedIn: true })
             }
-            return Object.assign({}, state, { route: action.payload })
+            else {
+                return Object.assign({}, state, { route: action.payload })
+            }
 
         case CHANGE_URL_INPUT:
             return Object.assign({}, state, { imageUrl: action.payload })
