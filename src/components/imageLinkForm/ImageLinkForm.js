@@ -30,7 +30,7 @@ export class ImageLinkForm extends Component {
                 <p className='f3 white'>
                     http://www.icone-group.com/img/equipe.jpg
                 </p>
-                <div className='mh7 pa2 br1 shadow-5 bg-light-purple'>
+                <div className='mh4 pa2 br1 shadow-5 bg-light-purple'>
                     <form className='center' onSubmit={this.handleSubmit}>
                         <input
                             className="fl f4 pa w-80"
