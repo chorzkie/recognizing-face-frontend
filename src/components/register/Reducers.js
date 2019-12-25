@@ -27,7 +27,7 @@ export const registerRED = (state = initialStateRegister, action = {}) => {
         case REGISTER_PENDING: //registeringMessage: 'Registering...'
             return Object.assign({}, state, { registeringMessage: '', isPending: true })
         case REGISTER_FAILED:
-            return Object.assign({}, state, { registeringMessage: action.payload, isPending: false })
+            return Object.assign({}, state, { registeringMessage: action.payload+'. Email probably already registered', isPending: false })
 
         default:
             return state;

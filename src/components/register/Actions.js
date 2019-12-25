@@ -39,7 +39,7 @@ export const submitRegisterACT = (name, email, password) => (dispatch) => {
     })
         .then(response => response.json())
         .then(reply => {
-            if (reply === 'Email already registered') {
+            if (reply === 'Fail registering') {
                 dispatch({
                     type: REGISTER_FAILED,
                     payload: reply
